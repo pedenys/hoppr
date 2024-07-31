@@ -1,0 +1,37 @@
+{
+  "plugins": ["simple-import-sort", "unused-imports", "@tanstack/query"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-unused-vars": "off",
+    "prefer-const": "error",
+    "require-await": "warn",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ForStatement",
+        "message": "For loops are generally not recommended because they're hard to read, use array methods instead (.map, .forEach, .find, .reduce, ...)"
+      },
+      {
+        "selector": "ClassBody",
+        "message": "Classes are not recommended in current React versions, use functions intstead"
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "off",
+    "import/no-default-export": "error"
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**/*", "*.ts", "*.js", "*.mjs"],
+      "rules": { "import/no-default-export": "off" }
+    }
+  ]
+}

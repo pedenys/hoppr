@@ -1,0 +1,6 @@
+{
+  "**/*.{js,jsx,ts,tsx}": [
+    "eslint",
+    "npx prettier --config ./.prettierrc.js --write"
+  ]
+}

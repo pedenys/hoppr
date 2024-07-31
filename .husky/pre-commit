@@ -1,0 +1,17 @@
+#!/bin/sh
+echo 'Fixing code style before committing 🏗️👷'
+echo "Shouldn't be too long… ⚡"
+
+npx lint-staged ||
+(
+    echo 'Something went wrong 🔨❌' 
+    echo 'Check linter, add changes and try commit again'
+    false;
+)
+
+npm run tscheck ||
+(
+    echo 'Something went wrong 🔨❌' 
+    echo 'Check Typescript errors'
+    false;
+)
