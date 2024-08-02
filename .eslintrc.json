@@ -32,6 +32,12 @@
     {
       "files": ["src/pages/**/*", "*.ts", "*.js", "*.mjs"],
       "rules": { "import/no-default-export": "off" }
+    },
+    {
+      "files": "e2e/**/*",
+      "rules": {
+        "no-restricted-syntax": "off"
+      }
     }
   ]
 }

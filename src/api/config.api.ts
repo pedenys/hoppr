@@ -1,10 +1,10 @@
 import { AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
-import { getEnvironmentVariable } from "@/utils/environment/getEnvironmentVariable/utils";
-
+const API_URL = process.env.NEXT_PUBLIC_API_ENDPOINT;
+const IS_DEBUG = process.env.NODE_ENV === "development";
 export const config = {
-  apiUrl: getEnvironmentVariable("NEXT_PUBLIC_API_ENDPOINT"),
-  isDebug: getEnvironmentVariable("NODE_ENV") === "development",
+  apiUrl: API_URL,
+  isDebug: IS_DEBUG,
 };
 
 export const requestMiddlewares = (

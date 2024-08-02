@@ -28,6 +28,8 @@ export const getClient = () => {
     return responseMiddlewares(response);
   });
 
+  client = _client;
+
   return _client;
 };
 

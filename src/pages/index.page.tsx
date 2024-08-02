@@ -1,12 +1,17 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 
 import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [showHelloMessage, setShowHelloMessage] = useState<boolean>(false);
+  const toggleHelloMessage = () => {
+    setShowHelloMessage((prev) => !prev);
+  };
   return (
     <>
       <Head>
@@ -16,18 +21,37 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
+        <h1 data-testid='home-page__title'>Hoppr</h1>
+        {showHelloMessage ? (
+          <>
+            <p data-testid='home-page__greetings_message'>
+              Bisous sur le crâne de Édouard Cattez
+            </p>
+            <button
+              data-testid='home-page__greetings_trigger-off'
+              onClick={toggleHelloMessage}
+            >
+              good bye
+            </button>
+          </>
+        ) : (
+          <>
+            <p data-testid='home-page__greetings_hint'>be polite</p>
+            <button
+              data-testid='home-page__greetings_trigger'
+              onClick={toggleHelloMessage}
+            >
+              yes please
+            </button>
+          </>
+        )}
         <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
           <div>
             <a
               href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
               target='_blank'
               rel='noopener noreferrer'
             >
-              By{" "}
               <Image
                 src='/vercel.svg'
                 alt='Vercel Logo'
