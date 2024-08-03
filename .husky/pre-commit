@@ -2,6 +2,8 @@
 echo 'Fixing code style before committing 🏗️👷'
 echo "Shouldn't be too long… ⚡"
 
+npm run lint
+
 npx lint-staged ||
 (
     echo 'Something went wrong 🔨❌' 
