@@ -1,3 +1,2 @@
-export * from "./client.api";
-export * from "./routes.api";
-export * from "./types";
+export * from "./client";
+export * from "./routes";

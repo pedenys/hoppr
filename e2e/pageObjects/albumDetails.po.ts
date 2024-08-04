@@ -34,8 +34,8 @@ export class AlbumDetailsPo extends BasePo {
   async shouldSeeAlbumTitle() {
     const albumTitle = await this.page.getByTestId("album-details__title");
 
-    expect(albumTitle).toBeVisible();
-    expect(albumTitle).toHaveText(this._expectedAlbumDetails.title);
+    await expect(albumTitle).toBeVisible();
+    await expect(albumTitle).toHaveText(this._expectedAlbumDetails.title);
   }
 
   async shouldSeeAlbumCover() {
@@ -43,14 +43,17 @@ export class AlbumDetailsPo extends BasePo {
       "albums-details__album_cover",
     );
 
-    expect(albumCover).toBeVisible();
-    expect(albumCover).toHaveAttribute("src", this._expectedAlbumDetails.cover);
+    await expect(albumCover).toBeVisible();
+    await expect(albumCover).toHaveAttribute(
+      "src",
+      this._expectedAlbumDetails.cover,
+    );
   }
 
   async shouldSeeAlbumMusics() {
     const albumMusics = await this._getAlbumMusics();
 
-    expect(albumMusics).toHaveText(
+    await expect(albumMusics).toHaveText(
       this._expectedAlbumDetails.musics.map((music) => music.title),
     );
   }

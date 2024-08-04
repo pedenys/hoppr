@@ -3,11 +3,12 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const pageExtensions = ["page.tsx"];
+const endpointExtensions = ["endpoint.ts"];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions,
+  pageExtensions: [...pageExtensions, ...endpointExtensions],
 };
 
 module.exports = withBundleAnalyzer(nextConfig);

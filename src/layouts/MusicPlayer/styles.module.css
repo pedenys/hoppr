@@ -1,0 +1,6 @@
+.container {
+  position: absolute;
+  z-index: 2;
+  right: var(--default-gap-spacing);
+  bottom: var(--default-gap-spacing);
+}

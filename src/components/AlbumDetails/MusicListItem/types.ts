@@ -1,3 +1,11 @@
-import { Music } from "@/types/Music";
+import { MusicToPlay } from "@/contexts/musicPlayer/types";
 
-export type Props = Pick<Music, "id" | "title" | "isFavorite" | "url">;
+export type Props = {
+  title: string;
+  id: string;
+  isFavorite: boolean;
+  playContentUrl: string;
+  artist: string;
+};
+
+export type OnMusicToPlayArgument = MusicToPlay;

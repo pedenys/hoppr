@@ -1,5 +1,14 @@
+import { useMusicPlayer } from "@/contexts/musicPlayer";
+
+import { OnMusicToPlayArgument } from "./types";
+
 export const useHandleOnMusicPlay = () => {
-  const handleOnMusicPlay = () => {};
+  const { setMusicToPlay } = useMusicPlayer();
+
+  const handleOnMusicPlay = (musicToPlay: OnMusicToPlayArgument) => {
+    setMusicToPlay({ ...musicToPlay });
+  };
+
   return { handleOnMusicPlay };
 };
 

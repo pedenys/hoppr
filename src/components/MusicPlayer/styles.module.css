@@ -1,0 +1,35 @@
+.container {
+  border: 2px solid white;
+  padding: var(--default-bottom-spacing);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+
+.container > div:first-of-type {
+  align-self: flex-start;
+  font-size: 1.2rem;
+}
+
+.container p:last-of-type {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 350px;
+  margin-bottom: var(--default-bottom-spacing);
+}
+
+.closePlayer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  padding: var(--default-gap-spacing);
+  transition: opacity 0.3s;
+}
+
+.closePlayer:hover {
+  opacity: 0.8;
+}
